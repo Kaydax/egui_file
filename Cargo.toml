@@ -9,10 +9,10 @@ keywords = ["file-dialog", "file-picker"]
 license = "MIT"
 name = "egui_file"
 repository = "https://github.com/Barugon/egui_file"
-version = "0.6.0"
+version = "0.8.0"
 
 [dependencies]
 fst = "0.4.7"
 
 [dependencies.egui]
-version = "0.20"
+version = "0.21"
