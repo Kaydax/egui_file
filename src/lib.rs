@@ -725,7 +725,19 @@ impl FileDialog {
 
       // Sort keeping folders before files.
       file_infos.sort_by(|a, b| match a.dir == b.dir {
-        true => a.path.file_name().cmp(&b.path.file_name()),
+        true => a
+          .path
+          .file_name()
+          .unwrap()
+          .to_os_string()
+          .to_ascii_lowercase()
+          .cmp(
+            &b.path
+              .file_name()
+              .unwrap()
+              .to_os_string()
+              .to_ascii_lowercase(),
+          ),
         false => b.dir.cmp(&a.dir),
       });
 
